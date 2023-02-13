@@ -22,7 +22,7 @@ public class ObjectTracker implements SuperGenericGameTitleTheGameConstants{
     private double xboundary = 0;
     private double yboundary = 0;
     private Player player = null;
-    private Level Level = new Level();
+    //private Level Level = new Level();
     
     public void setPlayer(Player newPlayer){
         player = newPlayer;
@@ -62,7 +62,7 @@ public class ObjectTracker implements SuperGenericGameTitleTheGameConstants{
             }
             ArrayList addbullets = enemies.get(i).getBullets(FRAME_PAUSE);
             for(int j=0; j<addbullets.size(); j++){
-                System.out.print("bullets recieves\n");
+                //System.out.print("bullets recieves\n");
                 bullets.add((Bullet)addbullets.get(j));
             }
             if(enemies.get(i).getHealth()<0 && !deathrow.contains(enemies.get(i))){
@@ -134,7 +134,7 @@ public class ObjectTracker implements SuperGenericGameTitleTheGameConstants{
             bulletrect = new GRectangle(bullets.get(i).getX()-(bullets.get(i).getXsize()/2), bullets.get(i).getY()-(bullets.get(i).getYsize()/2), bullets.get(i).getXsize(), bullets.get(i).getYsize());
             collision = enemyrect.intersects(bulletrect) && bullets.get(i).isFromPlayer();
             if(collision){
-                System.out.print("Collison Detect Bullet: "+i+"\n");
+                //System.out.print("Collison Detect Bullet: "+i+"\n");
                 bullets.remove(i);
                 
                 break;

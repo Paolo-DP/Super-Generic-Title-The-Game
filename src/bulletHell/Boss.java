@@ -76,7 +76,7 @@ public class Boss implements SuperGenericGameTitleTheGameConstants{
         if(!bigbossspawned){
             newenemies.add(bigboss);
             bigbossspawned=true;
-            System.out.print("spawning bigboss\n");
+            //System.out.print("spawning bigboss\n");
             return newenemies;
         }
         else{
@@ -91,7 +91,7 @@ public class Boss implements SuperGenericGameTitleTheGameConstants{
                 continue;
             }
             else if(bosses.getNumConnections(current)<2&&bigboss.getHealth()>0){
-                System.out.print("spawning smol boss\n");
+                //System.out.print("spawning smol boss\n");
                 Enemy newsmolboss = new Enemy(APPLICATION_WIDTH, APPLICATION_HEIGHT/2);
                 newsmolboss.setImage(current.getImageFile(), current.getXsize()/2, current.getYsize()/2);
                 newsmolboss.setVelocity(current.getXVelocity()*-1, current.getYVelocity());

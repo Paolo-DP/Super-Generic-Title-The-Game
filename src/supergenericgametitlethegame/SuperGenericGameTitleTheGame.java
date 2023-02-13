@@ -57,36 +57,35 @@ public class SuperGenericGameTitleTheGame extends GraphicsProgram implements Sup
         boss.initBoss();
     }
     
-        public boolean isPlayerHit(){
-            if( getElementAt(Player.pImage.getX(),Player.pImage.getY())!=null&&getElementAt(Player.pImage.getX(),Player.pImage.getY())!=Player.pImage&&getElementAt(Player.pImage.getX(),Player.pImage.getY())!=Level.bg){
-                
-                return true;
-            }
-            else if ( getElementAt(Player.pImage.getX()+Player.pImage.getWidth()/4,Player.pImage.getY())!=null&&getElementAt(Player.pImage.getX()+Player.pImage.getWidth()/4,Player.pImage.getY())!=Player.pImage&&getElementAt(Player.pImage.getX()+Player.pImage.getWidth()/4,Player.pImage.getY())!=Level.bg){
-                
-                return true;
-            }
-            else if ( getElementAt(Player.pImage.getX(),Player.pImage.getY()+Player.pImage.getHeight()/4)!= null&&getElementAt(Player.pImage.getX(),Player.pImage.getY()+Player.pImage.getHeight()/4)!=Player.pImage&&getElementAt(Player.pImage.getX(),Player.pImage.getY()+Player.pImage.getHeight()/4)!=Level.bg){
-                return true;
-            }
-            else if ( getElementAt(Player.pImage.getX()+Player.pImage.getWidth()/4,Player.pImage.getY()+Player.pImage.getHeight()/4)!=null&&getElementAt(Player.pImage.getX()+Player.pImage.getWidth()/4,Player.pImage.getY()+Player.pImage.getHeight()/4)!=Level.bg&&getElementAt(Player.pImage.getX()+Player.pImage.getWidth()/4,Player.pImage.getY()+Player.pImage.getHeight()/4)!=Player.pImage){
-                return true;
-            }
-            return false;
+    public boolean isPlayerHit(){
+        if( getElementAt(Player.pImage.getX(),Player.pImage.getY())!=null&&getElementAt(Player.pImage.getX(),Player.pImage.getY())!=Player.pImage&&getElementAt(Player.pImage.getX(),Player.pImage.getY())!=Level.bg){
+            return true;
+        }
+        else if ( getElementAt(Player.pImage.getX()+Player.pImage.getWidth()/4,Player.pImage.getY())!=null&&getElementAt(Player.pImage.getX()+Player.pImage.getWidth()/4,Player.pImage.getY())!=Player.pImage&&getElementAt(Player.pImage.getX()+Player.pImage.getWidth()/4,Player.pImage.getY())!=Level.bg){
+            
+            return true;
+        }
+        else if ( getElementAt(Player.pImage.getX(),Player.pImage.getY()+Player.pImage.getHeight()/4)!= null&&getElementAt(Player.pImage.getX(),Player.pImage.getY()+Player.pImage.getHeight()/4)!=Player.pImage&&getElementAt(Player.pImage.getX(),Player.pImage.getY()+Player.pImage.getHeight()/4)!=Level.bg){
+            return true;
+        }
+        else if ( getElementAt(Player.pImage.getX()+Player.pImage.getWidth()/4,Player.pImage.getY()+Player.pImage.getHeight()/4)!=null&&getElementAt(Player.pImage.getX()+Player.pImage.getWidth()/4,Player.pImage.getY()+Player.pImage.getHeight()/4)!=Level.bg&&getElementAt(Player.pImage.getX()+Player.pImage.getWidth()/4,Player.pImage.getY()+Player.pImage.getHeight()/4)!=Player.pImage){
+            return true;
+        }
+        return false;
    }
     public void mouseMoved(MouseEvent me){
                 Player.setXCoordinate(me.getX()-0.5*Player.pImage.getWidth());
                 Player.setYCoordinate(me.getY()-0.5*Player.pImage.getHeight());
             }
     public void keyPressed(KeyEvent ke) {
-            switch (ke.getKeyCode()) {
-                case KeyEvent.VK_E:
-                    tracker.addProjectile(Player.getBullets(FRAME_PAUSE).iterator());
-                    break;
-                default:
-                    break;
-            }
+        switch (ke.getKeyCode()) {
+            case KeyEvent.VK_E:
+                tracker.addProjectile(Player.getBullets(FRAME_PAUSE).iterator());
+                break;
+            default:
+                break;
         }
+    }
     public void run(){
         tracker.setBounds(getWidth(), getHeight());
         dialog.println("Click on the screen once then\nPress E to fire");
@@ -121,7 +120,6 @@ public class SuperGenericGameTitleTheGame extends GraphicsProgram implements Sup
         music=new FileInputStream(new File("src\\audio\\unowen.wav"));
         AudioStream audios=new AudioStream(music);
         AudioPlayer.player.start(audios); 
-        
     }
     
     public void demo(){
