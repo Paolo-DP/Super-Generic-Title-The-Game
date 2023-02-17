@@ -25,8 +25,8 @@ public class SuperGenericGameTitleTheGame extends GraphicsProgram implements Sup
     private Player Player = new Player();
    private JLabel Health = new JLabel("Health: "+ Player.getHealth());
    IODialog dialog = getDialog();
-   private Boss boss = new Boss();
-  
+   private Boss boss = new Boss(); 
+
     int x = 0;
     int currentlevel = 1;
     InputStream music;
@@ -117,7 +117,7 @@ public class SuperGenericGameTitleTheGame extends GraphicsProgram implements Sup
         }
     }
     public void music() throws FileNotFoundException, IOException{
-        music=new FileInputStream(new File("src\\audio\\unowen.wav"));
+        music=new FileInputStream(new File("assets\\audio\\unowen.wav"));
         AudioStream audios=new AudioStream(music);
         AudioPlayer.player.start(audios); 
     }

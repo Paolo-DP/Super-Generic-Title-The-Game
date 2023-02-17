@@ -16,7 +16,7 @@ public interface SuperGenericGameTitleTheGameConstants {
     public static final int APPLICATION_HEIGHT = 700;
     
     /**the framerate of the game*/
-    public static final int FPS = 30;
+    public static final int FPS = 60;
     /**the pause between frames in milliseconds. dependent on FPS*/
     public static final int FRAME_PAUSE = 1000/FPS;
     
